@@ -48,7 +48,9 @@ npm run dev
 Acesse `http://localhost:3000` para entrar no terminal C2.
 
 ## 📸 Prévia da Interface
-*A interface conta com módulos interativos, um CLI integrado e mapas dinâmicos rastreando vetores de ataque.*
+A interface conta com módulos interativos, um CLI integrado e mapas dinâmicos rastreando vetores de ataque.
+
+![Interface do Argus-Fate](docs/preview.png)
 
 ---
 *Criado por [fabiopy-creator](https://github.com/fabiopy-creator) — Apenas para fins educacionais e de auditoria defensiva.*
