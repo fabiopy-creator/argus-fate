@@ -1,54 +1,54 @@
-# 👁️ ARGUS-FATE // CYBER OPERATIONS SUITE
+# 👁️ ARGUS-FATE // SUÍTE DE OPERAÇÕES CIBERNÉTICAS
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-**ARGUS-FATE** is a high-end, tactical Command & Control (C2) dashboard designed for Open Source Intelligence (OSINT) and cybersecurity auditing. It features a fully operational web-based CLI, real-time threat intelligence queries, and an immersive sci-fi UI with synthetic Web Audio SFX.
+**ARGUS-FATE** é um painel tático de Comando e Controle (C2) de alto nível, projetado para Inteligência de Fontes Abertas (OSINT) e auditoria de cibersegurança. O sistema conta com um terminal (CLI) web totalmente operacional, consultas de inteligência de ameaças em tempo real e uma interface imersiva de ficção científica com efeitos sonoros sintetizados via Web Audio.
 
-## 🚀 Features
+## 🚀 Recursos Principais
 
-* **📡 Active OSINT Engine:** Real-time GeoIP telemetry, ASN resolution, and DNS enumeration.
-* **🛡️ Security Auditing:** Automated HTTP security header inspection (HSTS, CSP, X-Frame-Options) with grading algorithm (A+ to F).
-* **🦠 Threat Intel Integration:** Live querying of global vulnerability databases (NVD/CIRCL) for CVEs.
-* **🔊 Synthesized Sci-Fi Audio:** Pure JavaScript Web Audio API generating mechanical typing bips, radar pings, and breach alarms. No external audio files.
-* **🎨 Tactical Themes & CRT FX:** 4 military-grade color palettes (Matrix Classic, Cyberpunk Amber, Deep Ops Cyan, Red Alert) with a toggleable CRT scanline filter.
-* **🤖 PANDORA AI Core:** Tactical AI assistant for defensive recommendations and exploit mitigation directly in the terminal.
-* **📄 Forensic Export:** Instantly generate and download markdown-based confidential forensic dossiers of audited targets.
+* **📡 Motor OSINT Ativo:** Telemetria GeoIP em tempo real, resolução de ASN e enumeração de DNS.
+* **🛡️ Auditoria de Segurança:** Inspeção automatizada de cabeçalhos de segurança HTTP (HSTS, CSP, X-Frame-Options) com algoritmo de pontuação (A+ até F).
+* **🦠 Integração de Threat Intel:** Consulta ao vivo a bancos de dados globais de vulnerabilidades (NVD/CIRCL) para busca de CVEs.
+* **🔊 Áudio Sci-Fi Sintetizado:** Bipes de digitação mecânica, radares e alarmes gerados 100% via código JavaScript usando Web Audio API (sem arquivos externos de áudio).
+* **🎨 Temas Táticos & Efeitos CRT:** 4 paletas de cores de nível militar (Matrix Classic, Cyberpunk Amber, Deep Ops Cyan, Red Alert) com filtro de monitor CRT (scanlines) alternável.
+* **🤖 Núcleo de IA PANDORA:** Assistente de inteligência artificial tática para recomendações defensivas e mitigação de exploits direto no terminal.
+* **📄 Exportação Forense:** Gere e baixe instantaneamente um dossiê forense confidencial em markdown dos alvos auditados.
 
-## 💻 Tactical CLI Commands
+## 💻 Comandos Táticos do CLI
 
-| Command | Description |
+| Comando | Descrição |
 |---|---|
-| `recon <domain\|ip>` | Deep OSINT sweep (DNS, GeoIP, Security Headers & Score) |
-| `cve <query\|id>` | Search global CVE / NVD threat database |
-| `dns <domain>` | Enumerate DNS records & analyze SPF/DMARC policies |
-| `headers <url>` | Audit HTTP security headers & posture |
-| `hash <algo> <text>` | Calculate hash (sha256, sha512, md5) via Web Crypto API |
-| `ai <query>` | Consult PANDORA Tactical AI for defense intel |
-| `export [target]` | Download forensic intelligence dossier (.md report) |
+| `recon <dominio\|ip>` | Varredura profunda OSINT (DNS, GeoIP, Cabeçalhos de Segurança & Pontuação) |
+| `cve <termo\|id>` | Pesquisa no banco de dados global de ameaças CVE / NVD |
+| `dns <dominio>` | Enumera registros DNS e analisa políticas SPF/DMARC |
+| `headers <url>` | Audita cabeçalhos de segurança HTTP e postura do servidor |
+| `hash <algo> <texto>` | Calcula hashes (sha256, sha512, md5) nativamente via Web Crypto API |
+| `ai <pergunta>` | Consulta a IA Tática PANDORA para inteligência de defesa |
+| `export [alvo]` | Baixa o dossiê de inteligência forense (relatório .md) |
 
-## 🛠️ Installation & Setup
+## 🛠️ Instalação e Configuração
 
 ```bash
-# Clone the repository
+# Clone o repositório
 git clone https://github.com/fabiopy-creator/argus-fate.git
 
-# Navigate to the project directory
+# Acesse a pasta do projeto
 cd argus-fate
 
-# Install dependencies
+# Instale as dependências
 npm install
 
-# Start the tactical server
+# Inicie o servidor tático
 npm run dev
 ```
 
-Navigate to `http://localhost:3000` to access the C2 terminal.
+Acesse `http://localhost:3000` para entrar no terminal C2.
 
-## 📸 Interface Preview
-*The interface features fully interactive UI modules, an integrated CLI, and dynamic maps plotting trace vectors.*
+## 📸 Prévia da Interface
+*A interface conta com módulos interativos, um CLI integrado e mapas dinâmicos rastreando vetores de ataque.*
 
 ---
-*Created by [fabiopy-creator](https://github.com/fabiopy-creator) — For educational and defensive auditing purposes only.*
+*Criado por [fabiopy-creator](https://github.com/fabiopy-creator) — Apenas para fins educacionais e de auditoria defensiva.*
