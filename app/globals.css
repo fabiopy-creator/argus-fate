@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+  --font-sans: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-border: var(--border);
+  --color-border-dim: var(--border-dim);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-alert: var(--alert);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-cyan: var(--cyan);
+  --color-amber: var(--amber);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+}
+
+/* =============================================
+   DEFAULT THEME: MATRIX CLASSIC (green)
+   ============================================= */
+:root,
+.theme-matrix {
+  color-scheme: dark;
+  --background: #000000;
+  --foreground: #00ff66;
+  --panel: #030703;
+  --border: #0f4d2a;
+  --border-dim: #0a2e1a;
+  --primary: #00ff66;
+  --primary-foreground: #000000;
+  --accent: #00ff66;
+  --accent-foreground: #000000;
+  --alert: #ff0033;
+  --muted: #08160d;
+  --muted-foreground: #4a8f63;
+  --cyan: #00e0d0;
+  --amber: #ffb000;
+  --scanline-color: rgba(0, 255, 102, 0.03);
+  --grid-color: rgba(0, 255, 102, 0.03);
+}
+
+/* =============================================
+   THEME: CYBERPUNK AMBER
+   ============================================= */
+.theme-amber {
+  --background: #0a0600;
+  --foreground: #ffb000;
+  --panel: #0c0800;
+  --border: #5c3d00;
+  --border-dim: #3a2600;
+  --primary: #ffb000;
+  --primary-foreground: #000000;
+  --accent: #ffb000;
+  --accent-foreground: #000000;
+  --alert: #ff4400;
+  --muted: #1a1000;
+  --muted-foreground: #7a5a00;
+  --cyan: #ff7700;
+  --amber: #ffe066;
+  --scanline-color: rgba(255, 176, 0, 0.03);
+  --grid-color: rgba(255, 176, 0, 0.03);
+}
+
+/* =============================================
+   THEME: DEEP OPS CYAN
+   ============================================= */
+.theme-cyan {
+  --background: #000a0c;
+  --foreground: #00e0d0;
+  --panel: #010c0e;
+  --border: #004d55;
+  --border-dim: #002e33;
+  --primary: #00e0d0;
+  --primary-foreground: #000000;
+  --accent: #00e0d0;
+  --accent-foreground: #000000;
+  --alert: #ff0055;
+  --muted: #001418;
+  --muted-foreground: #007a80;
+  --cyan: #00b8ff;
+  --amber: #00ffa0;
+  --scanline-color: rgba(0, 224, 208, 0.03);
+  --grid-color: rgba(0, 224, 208, 0.03);
+}
+
+/* =============================================
+   THEME: DEFCON 1 / RED ALERT
+   ============================================= */
+.theme-red {
+  --background: #060000;
+  --foreground: #ff2244;
+  --panel: #0a0000;
+  --border: #550010;
+  --border-dim: #330008;
+  --primary: #ff2244;
+  --primary-foreground: #000000;
+  --accent: #ff2244;
+  --accent-foreground: #000000;
+  --alert: #ff6600;
+  --muted: #150000;
+  --muted-foreground: #7a1020;
+  --cyan: #ff6688;
+  --amber: #ffaa00;
+  --scanline-color: rgba(255, 34, 68, 0.03);
+  --grid-color: rgba(255, 34, 68, 0.03);
+}
+
+@layer base {
+  * {
+    border-color: var(--border-dim);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        var(--scanline-color, rgba(0, 255, 102, 0.03)) 0px,
+        var(--scanline-color, rgba(0, 255, 102, 0.03)) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  /* thin terminal scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+}
+
+/* =============================================
+   CRT MONITOR EFFECT
+   ============================================= */
+@keyframes crt-flicker {
+  0%, 100% { opacity: 1; }
+  98% { opacity: 1; }
+  98.5% { opacity: 0.7; }
+  99% { opacity: 1; }
+}
+
+@keyframes crt-scanlines-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(4px); }
+}
+
+body.crt-fx {
+  animation: crt-flicker 6s infinite;
+}
+
+body.crt-fx::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.18) 2px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+  animation: crt-scanlines-scroll 0.1s linear infinite;
+}
+
+body.crt-fx::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+}
+.animate-flicker {
+  animation: flicker 4s infinite;
+}
+
+/* Pulse glow on primary color elements */
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 4px var(--primary); }
+  50% { text-shadow: 0 0 12px var(--primary), 0 0 24px var(--primary); }
+}
+.animate-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
